@@ -1,45 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Jothinathan Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jothinathan | SOC & Digital Forensics</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --text-color: #c9d1d9;
+            --accent-color: #238636; /* Security Green */
+            --header-color: #58a6ff;
+        }
+        body { 
+            font-family: 'Courier New', Courier, monospace; 
+            background-color: var(--bg-color); 
+            color: var(--text-color); 
+            line-height: 1.6;
+            margin: 0; padding: 20px;
+        }
+        .container { max-width: 800px; margin: auto; border: 1px solid #30363d; padding: 40px; border-radius: 10px; }
+        h1, h2, h3 { color: var(--header-color); border-bottom: 1px solid #30363d; padding-bottom: 10px; }
+        .skill-tag { 
+            display: inline-block; 
+            background: #21262d; 
+            border: 1px solid var(--accent-color); 
+            padding: 5px 15px; 
+            margin: 5px; 
+            border-radius: 20px; 
+            font-size: 0.9em;
+        }
+        a { color: var(--accent-color); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .contact-info { margin-top: 30px; font-size: 0.8em; color: #8b949e; }
+    </style>
 </head>
+<body>
 
-<body style="font-family: Arial; text-align:center;">
+<div class="container">
+    <header>
+        <h1>> JOTHINATHAN_</h1>
+        <p><strong>BSc Digital & Cyber Forensic Science Graduate</strong></p>
+        <p>Targeting: SOC Analyst | Digital Forensics Investigator</p>
+    </header>
 
-<h1>Welcome to My Website</h1>
+    <section id="about">
+        <h3>[01] Mission_Statement</h3>
+        <p>Aspiring Cybersecurity professional dedicated to identifying vulnerabilities and mitigating threats. Specialized in log analysis and network traffic monitoring.</p>
+    </section>
 
-<h2>Jothinathan</h2>
-<p>BSc Digital & Cyber Forensic Science Graduate</p>
+    <section id="skills">
+        <h3>[02] Technical_Stack</h3>
+        <div class="skill-tag">Python (Scripting)</div>
+        <div class="skill-tag">Kali Linux</div>
+        <div class="skill-tag">Nmap & Wireshark</div>
+        <div class="skill-tag">Digital Forensics</div>
+        <div class="skill-tag">SIEM Tools</div>
+    </section>
 
-<h3>About Me</h3>
-<p>I am interested in Cybersecurity and SOC Analyst roles.</p>
+    <section id="projects">
+        <h3>[03] Forensic_Lab_Reports</h3>
+        <ul>
+            <li><strong>Network Reconnaissance:</strong> Automated Nmap scanning scripts for vulnerability detection.</li>
+            <li><strong>SOC Log Analysis:</strong> Investigating brute-force attack patterns in Windows Event logs.</li>
+            <li><strong>Linux Hardening:</strong> Configured IPTables and SSH security protocols.</li>
+        </ul>
+    </section>
 
-<h3>Skills</h3>
-<ul style="list-style:none;">
-<li>Python</li>
-<li>Kali Linux</li>
-<li>Network Security</li>
-<li>Digital Forensics</li>
-</ul>
-<h3>Projects</h3>
-<ul>
-<li>Network scanning using Nmap</li>
-<li>Basic SOC log analysis</li>
-<li>Linux security practice</li>
-</ul>
+    <section id="certifications">
+        <h3>[04] Verified_Credentials</h3>
+        <ul>
+            <li><strong>CICSA</strong> - Red Team Hacker Academy</li>
+            <li><strong>BSc</strong> in Digital & Cyber Forensic Science</li>
+        </ul>
+    </section>
 
-<h3>Certifications</h3>
-<ul>
-<li>CICSA - Red Team Hacker Academy</li>
-<li>BSc Digital & Cyber Forensic Science</li>
-</ul>
-
-<h3>LinkedIn</h3>
-<p>
-<a href="https://www.linkedin.com/in/jothinathan-m-443486270">My LinkedIn Profile</a>
-</p>
-<h3>9645401711</h3>
-<p>Email: jothinathan3107@gmail.com</p>
+    <footer class="contact-info">
+        <p>LINKEDIN: <a href="https://www.linkedin.com/in/jothinathan-m-443486270">connect_here</a></p>
+        <p>PH: +91 9645401711 | EMAIL: jothinathan3107@gmail.com</p>
+    </footer>
+</div>
 
 </body>
 </html>
