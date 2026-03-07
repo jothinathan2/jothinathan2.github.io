@@ -25,6 +25,18 @@
 
         .wrapper { max-width: 900px; width: 100%; }
 
+        /* Profile Image Styles */
+        .profile-img {
+            width: 120px; 
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 3px solid var(--accent);
+            object-fit: cover;
+            /* Optional: subtle glow to match the 'Cyber' theme */
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.2); 
+        }
+
         /* Grid Layout */
         .grid-container {
             display: grid;
@@ -50,13 +62,6 @@
         h2 { color: var(--accent); font-family: monospace; font-size: 0.9rem; text-transform: uppercase; }
         p { color: var(--muted); line-height: 1.6; }
 
-        .profile-img {
-            width: 80px; height: 80px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-            filter: grayscale(100%);
-        }
-
         .tag {
             display: inline-block;
             background: #1a1a1a;
@@ -66,13 +71,20 @@
             margin: 4px;
             color: var(--accent);
         }
+
+        /* Mobile responsiveness */
+        @media (max-width: 600px) {
+            .grid-container { grid-template-columns: 1fr; }
+            .full-width { grid-column: span 1; }
+            h1 { font-size: 2rem; }
+        }
     </style>
 </head>
 <body>
 
 <div class="wrapper">
     <header>
-        <img src="profile.jpg" alt="Jothinathan" class="profile-img">
+        <img src="profile.jpg" alt="Jothinathan M." class="profile-img">
         <h2>Digital Forensics & SOC</h2>
         <h1>Jothinathan M.</h1>
         <p>BSc Digital & Cyber Forensic Science Graduate. Investigating the intersection of network security and digital evidence.</p>
