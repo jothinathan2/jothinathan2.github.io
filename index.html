@@ -3,120 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jothinathan | Forensic Specialist</title>
+    <title>Jothinathan M | Forensic & SOC Specialist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #050505;
-            --card-bg: #111111;
-            --accent: #00ff41; /* Cyber Green */
+            --bg: #0a0a0a;
+            --card-bg: #141414;
+            --accent: #00ff41; /* Cyber Red */
             --text: #ffffff;
-            --muted: #888888;
+            --muted: #a0a0a0;
+            --border: #222222;
         }
 
+        * { box-sizing: border-box; }
+        
         body {
             background-color: var(--bg);
             color: var(--text);
-            font-family: 'Inter', -apple-system, sans-serif;
+            font-family: 'Inter', sans-serif;
             margin: 0;
-            padding: 40px 20px;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Sticky Navigation */
+        nav {
             display: flex;
             justify-content: center;
+            gap: 25px;
+            padding: 20px;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
         }
 
-        .wrapper { max-width: 900px; width: 100%; }
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: 0.3s;
+        }
 
-        /* Profile Image Styles */
+        nav a:hover { color: var(--accent); }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Header / Profile Section */
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
         .profile-img {
-            width: 120px; 
-            height: 120px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            margin-bottom: 20px;
             border: 3px solid var(--accent);
             object-fit: cover;
-            /* Optional: subtle glow to match the 'Cyber' theme */
-            box-shadow: 0 0 15px rgba(0, 255, 65, 0.2); 
+            margin-bottom: 20px;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
         }
 
-        /* Grid Layout */
-        .grid-container {
+        h1 { font-size: 3.5rem; margin: 10px 0; letter-spacing: -2px; }
+        .subtitle { color: var(--accent); font-family: monospace; font-size: 1.1rem; }
+
+        /* Grid System */
+        .bento-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
-            margin-top: 40px;
         }
 
         .card {
             background: var(--card-bg);
-            border: 1px solid #222;
-            padding: 24px;
-            border-radius: 12px;
-            transition: 0.3s;
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 16px;
+            transition: 0.3s ease;
         }
 
-        .card:hover { border-color: var(--accent); }
+        .card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
 
-        .full-width { grid-column: span 2; }
+        .full-width { grid-column: 1 / -1; }
 
-        /* Typography */
-        h1 { font-size: 3rem; margin: 0; letter-spacing: -2px; }
-        h2 { color: var(--accent); font-family: monospace; font-size: 0.9rem; text-transform: uppercase; }
-        p { color: var(--muted); line-height: 1.6; }
-
+        h2 { font-size: 1.2rem; margin-top: 0; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; }
+        
+        /* Tags for Skills */
+        .tag-container { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
         .tag {
-            display: inline-block;
-            background: #1a1a1a;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin: 4px;
-            color: var(--accent);
+            background: #1f1f1f;
+            color: var(--text);
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            border: 1px solid #333;
         }
 
-        /* Mobile responsiveness */
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: var(--accent);
+            color: #000;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 0;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.8rem;
+        }
+
+        /* Mobile Adjustments */
         @media (max-width: 600px) {
-            .grid-container { grid-template-columns: 1fr; }
-            .full-width { grid-column: span 1; }
-            h1 { font-size: 2rem; }
+            h1 { font-size: 2.5rem; }
+            .full-width { grid-column: auto; }
         }
     </style>
 </head>
 <body>
 
-<div class="wrapper">
-    <header>
-        <img src="profile.jpg" alt="Jothinathan M." class="profile-img">
-        <h2>Digital Forensics & SOC</h2>
-        <h1>Jothinathan M.</h1>
-        <p>BSc Digital & Cyber Forensic Science Graduate. Investigating the intersection of network security and digital evidence.</p>
-    </header>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="https://www.linkedin.com/in/jothinathan-m-443486270" target="_blank">LinkedIn</a>
+    </nav>
 
-    <div class="grid-container">
-        <div class="card full-width">
-            <h2>Mission</h2>
-            <p>Specializing in threat detection and incident response. Certified CICSA professional with hands-on experience in Kali Linux and Nmap reconnaissance.</p>
-        </div>
+    <div class="container">
+        <header id="about">
+            <img src="profile.jpg" alt="Jothinathan M" class="profile-img">
+            <div class="subtitle">BSc Digital & Cyber Forensic Science</div>
+            <h1>Jothinathan M.</h1>
+            <p style="max-width: 600px; margin: 20px auto; color: var(--muted);">
+                Aspiring SOC Analyst and Digital Forensics Investigator. I specialize in network security, incident response, and forensic data analysis.
+            </p>
+        </header>
 
-        <div class="card">
-            <h2>Technical Stack</h2>
-            <div class="tag">Python</div>
-            <div class="tag">Kali Linux</div>
-            <div class="tag">Wireshark</div>
-            <div class="tag">Nmap</div>
-            <div class="tag">Digital Forensics</div>
-        </div>
+        <div class="bento-grid">
+            <div class="card">
+                <h2>Technical Stack</h2>
+                <div class="tag-container">
+                    <div class="tag">Python</div>
+                    <div class="tag">Kali Linux</div>
+                    <div class="tag">Wireshark</div>
+                    <div class="tag">Nmap</div>
+                    <div class="tag">Digital Forensics</div>
+                    <div class="tag">SIEM Tools</div>
+                </div>
+            </div>
 
-        <div class="card">
-            <h2>Latest Lab</h2>
-            <p><strong>Network Scan Analysis</strong><br>Identifying vulnerabilities using automated Nmap scripts and manual verification.</p>
-        </div>
+            <div class="card">
+                <h2>Certifications</h2>
+                <p><strong>CICSA</strong> - Red Team Hacker Academy</p>
+                <p><strong>BSc</strong> - Digital & Cyber Forensic Science</p>
+            </div>
 
-        <div class="card full-width" style="text-align: center;">
-            <h2>Connect</h2>
-            <p>jothinathan3107@gmail.com</p>
-            <a href="https://www.linkedin.com/in/jothinathan-m-443486270" style="color:var(--accent); text-decoration: none;">LinkedIn Profile →</a>
+            <div class="card full-width" id="projects">
+                <h2>Featured Project: Network Scanning</h2>
+                <p>Developed custom Nmap automation scripts to identify network vulnerabilities and generate forensic-ready audit reports.</p>
+                <a href="#" class="btn">View Case Study</a>
+            </div>
+
+            <div class="card full-width" style="text-align: center;">
+                <h2>Get In Touch</h2>
+                <p>Interested in collaboration or hiring? Reach out via email.</p>
+                <p><strong>jothinathan3107@gmail.com</strong></p>
+                <p>Phone: +91 9645401711</p>
+            </div>
         </div>
     </div>
-</div>
+
+    <footer>
+        &copy; 2026 Jothinathan M. | Built with Netlify & GitHub
+    </footer>
 
 </body>
 </html>
